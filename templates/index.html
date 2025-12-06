@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mario Pyramid (Python)</title>
+    <style>
+        body {
+            font-family: monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        pre {
+            white-space: pre;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mario Pyramid (Python via Flask)</h1>
+
+    <form method="post">
+        <label for="height">Height (1–8): </label>
+        <input id="height" name="height" type="number" min="1" max="8" required>
+        <button type="submit">Build</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if pyramid %}
+        <pre>{{ pyramid }}</pre>
+    {% endif %}
+</body>
+</html>
